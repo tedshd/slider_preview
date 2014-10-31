@@ -1,0 +1,112 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-10-25 08:51:21
+ * @version $Id$
+ */
+
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+    clear: both;
+}
+
+$slidesShowWidth: 320px;
+$slidesShowCount: 200;
+$slidesShowHeight: 180px;
+$slidesShowCenterWidth: 640px;
+$slidesShowCenterHeight: 480px;
+$slidesShowCenterCount: 12;
+
+.slider-preview {
+    position: relative;
+    width: calc(100% - 60px);
+    padding: 0 30px;
+    overflow: hidden;
+    background: #ff8800;
+    .arrow-left, .arrow-right {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+    }
+    .arrow-left {
+        left: 0;
+    }
+    .arrow-right {
+        right: 0;
+    }
+    .slider-preview-container {
+        position: relative;
+        width: 100%;
+        // height: $slidesShowHeight + 20px;
+        // overflow: auto;
+        .slider-preview-content {
+            // width: $slidesShowWidth * $slidesShowCount;
+            .slideshow {
+                // position: absolute;
+                // top: 0;
+                // width: $slidesShowWidth;
+                // height: $slidesShowHeight;
+                // float: left;
+                background: gray;
+                border: solid 5px red;
+                box-sizing: border-box;
+                // @include transition-property(all);
+                // @include transition-duration(.5s);
+                // @include transition-timing-function(ease);
+            }
+        }
+        // @for $i from 0 through $slidesShowCount {
+        //     .slideshow.slideshow-#{$i} {
+        //         left: $slidesShowWidth*$i;
+        //     }
+        // }
+    }
+}
+.slider-preview-left {
+    .slider-preview-container {
+        height: $slidesShowHeight + 20px;
+        overflow: auto;
+        .slider-preview-content {
+            width: $slidesShowWidth * $slidesShowCount;
+            .slideshow {
+                width: $slidesShowWidth;
+                height: $slidesShowHeight;
+                float: left;
+            }
+        }
+    }
+}
+.slider-preview-center {
+    .slider-preview-container {
+        height: $slidesShowCenterHeight;
+        overflow: hidden;
+        .slider-preview-content {
+            position: absolute;
+            left: 50%;
+            .slideshow {
+                position: absolute;
+                top: 0;
+                width: $slidesShowCenterWidth;
+                height: $slidesShowCenterHeight;
+                @include transition-property(all);
+                @include transition-duration(.5s);
+                @include transition-timing-function(ease);
+            }
+            @for $i from 0 through $slidesShowCenterCount {
+                .slideshow-#{$i} {
+                    left: $slidesShowCenterWidth*$i;
+                }
+            }
+        }
+    }
+}

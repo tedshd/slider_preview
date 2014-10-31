@@ -1,0 +1,215 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-10-25 08:51:21
+ * @version $Id$
+ */
+/* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 12, ../sass/slider_preview.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* line 16, ../sass/slider_preview.scss */
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+
+/* line 30, ../sass/slider_preview.scss */
+.slider-preview {
+  position: relative;
+  width: calc(100% - 60px);
+  padding: 0 30px;
+  overflow: hidden;
+  background: #ff8800;
+}
+/* line 36, ../sass/slider_preview.scss */
+.slider-preview .arrow-left, .slider-preview .arrow-right {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+}
+/* line 41, ../sass/slider_preview.scss */
+.slider-preview .arrow-left {
+  left: 0;
+}
+/* line 44, ../sass/slider_preview.scss */
+.slider-preview .arrow-right {
+  right: 0;
+}
+/* line 47, ../sass/slider_preview.scss */
+.slider-preview .slider-preview-container {
+  position: relative;
+  width: 100%;
+}
+/* line 54, ../sass/slider_preview.scss */
+.slider-preview .slider-preview-container .slider-preview-content .slideshow {
+  background: gray;
+  border: solid 5px red;
+  box-sizing: border-box;
+}
+
+/* line 76, ../sass/slider_preview.scss */
+.slider-preview-left .slider-preview-container {
+  height: 200px;
+  overflow: auto;
+}
+/* line 79, ../sass/slider_preview.scss */
+.slider-preview-left .slider-preview-container .slider-preview-content {
+  width: 64000px;
+}
+/* line 81, ../sass/slider_preview.scss */
+.slider-preview-left .slider-preview-container .slider-preview-content .slideshow {
+  width: 320px;
+  height: 180px;
+  float: left;
+}
+
+/* line 90, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container {
+  height: 480px;
+  overflow: hidden;
+}
+/* line 93, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content {
+  position: absolute;
+  left: 50%;
+}
+/* line 96, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow {
+  position: absolute;
+  top: 0;
+  width: 640px;
+  height: 480px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-0 {
+  left: 0px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-1 {
+  left: 640px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-2 {
+  left: 1280px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-3 {
+  left: 1920px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-4 {
+  left: 2560px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-5 {
+  left: 3200px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-6 {
+  left: 3840px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-7 {
+  left: 4480px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-8 {
+  left: 5120px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-9 {
+  left: 5760px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-10 {
+  left: 6400px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-11 {
+  left: 7040px;
+}
+/* line 106, ../sass/slider_preview.scss */
+.slider-preview-center .slider-preview-container .slider-preview-content .slideshow-12 {
+  left: 7680px;
+}
