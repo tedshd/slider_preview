@@ -6,14 +6,6 @@
  * @version $Id$
  */
 
-/*global $, jQuery, alert, console, window, document, angular*/
-/**
- *
- * @authors Ted Shiu (ted_shiu@miiicasa.com)
- * @date    2014-10-29 10:46:32
- * @version $Id$
- */
-
 (function () {
     function sliderPreview(option) {
         var d4 = {
@@ -70,8 +62,8 @@
 
         if (type === 'center') {
             var d4ViewCount = 7,
-                slideshowCount = -1,
-                slideCount = 0,
+                insertCount = 0,
+                appendCount = d4ViewCount - 1,
                 dom = document.querySelectorAll('#' + node + ' .slideshow'),
                 sliderContent = document.querySelector('#' + node + ' .slider-preview-content');
             sliderContent.innerHTML = '';
@@ -86,42 +78,40 @@
                 var domNew = document.querySelectorAll('#' + node + ' .slideshow');
                 domNew[d4ViewCount - 1].outerHTML = '';
                 delete domNew[d4ViewCount - 1];
-                slideCount--;
-                if (slideCount < 0) {
-                    slideCount = dom.length - 1;
+                appendCount--;
+                if (appendCount < 0) {
+                    appendCount = dom.length - 1;
                 }
-                sliderContent.insertBefore(dom[slideCount], sliderContent.childNodes[0]);
+                insertCount--;
+                if (insertCount < 0) {
+                    insertCount = dom.length - 1;
+                }
                 console.log('L');
-                // slideshowCount--;
-                // if (slideshowCount < -4) {
-                //     slideshowCount = -4;
-                // }
-                console.log(slideshowCount);
+                console.log(insertCount);
+                sliderContent.insertBefore(dom[insertCount], sliderContent.childNodes[0]);
                 for (var i = 0; i < d4ViewCount; i++) {
                     var slider = document.querySelectorAll('#' + node + ' .slideshow')[i];
-                    slider.style.left = (i - slideshowCount)*width - width + 'px';
+                    slider.style.left = i*width + 'px';
                 }
             });
-            var appendCount = d4ViewCount - 1;
             document.querySelector('#' + node + ' .arrow-right').addEventListener('click', function () {
                 var domNew = document.querySelectorAll('#' + node + ' .slideshow');
+                insertCount++;
+                if (insertCount > dom.length - 1) {
+                    insertCount = 0;
+                }
                 appendCount++;
                 if (appendCount > dom.length - 1) {
                     appendCount = 0;
                 }
+                console.log('R');
+                console.log(appendCount);
                 domNew[0].outerHTML = '';
                 delete domNew[0];
-                console.log(dom[appendCount]);
                 sliderContent.appendChild(dom[appendCount]);
-                console.log('R');
-                // slideshowCount++;
-                // if (slideshowCount > 3) {
-                //     slideshowCount = -1;
-                // }
                 for (var i = 0; i < d4ViewCount; i++) {
                     var slider = document.querySelectorAll('#' + node + ' .slideshow')[i];
-                    // console.log((i - slideshowCount)*width - width);
-                    slider.style.left = (i - slideshowCount)*width - width + 'px';
+                    slider.style.left = i*width + 'px';
                 }
             });
         }
